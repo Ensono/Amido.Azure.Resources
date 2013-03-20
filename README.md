@@ -1,0 +1,2 @@
+Amido.Azure.Resources
+=====================
