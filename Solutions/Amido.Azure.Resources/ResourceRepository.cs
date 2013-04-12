@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Services.Client;
 using System.Diagnostics;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using Amido.Azure.Storage.TableStorage;
 using Amido.Azure.Storage.TableStorage.Account;
 
@@ -12,16 +13,26 @@ namespace Amido.Azure.Resources
     {
         private readonly Dictionary<string, Dictionary<string, object>> resourceCache;
         
-        public ResourceRepository()
-            : base(AccountConfiguration())
+        public ResourceRepository(AccountConnection<Resource> connection)
+            : base(connection)
         {
             resourceCache = new Dictionary<string, Dictionary<string, object>>();
         }
 
-        public ResourceRepository(string tableName)
-            : base(AccountConfiguration(tableName))
+        public ResourceRepository(AccountConfiguration<Resource> configuration)
+            : base(configuration)
         {
             resourceCache = new Dictionary<string, Dictionary<string, object>>();
+        }
+
+        public static AccountConnection<Resource> AccountConnection(string connectionString, string tableName) 
+        {
+            return new AccountConnection<Resource>(connectionString, tableName);
+        }
+
+        public static AccountConnection<Resource> AccountConnection(string connectionString) 
+        {
+            return new AccountConnection<Resource>(connectionString);
         }
 
         public static AccountConfiguration<Resource> AccountConfiguration()

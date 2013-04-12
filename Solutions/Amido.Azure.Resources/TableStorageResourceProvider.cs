@@ -31,7 +31,7 @@ namespace Amido.Azure.Resources
             this.classname = classname.EncodeForTableStorage();
             this.virtualPath = virtualPath.EncodeForTableStorage();
             var resourceTableName = CloudConfigurationManager.GetSetting("TableStorage.ResourceTable");
-            resourceRepository = new ResourceRepository(resourceTableName);
+            resourceRepository = new ResourceRepository(ResourceRepository.AccountConfiguration(resourceTableName));
         }
 
         /// <summary>

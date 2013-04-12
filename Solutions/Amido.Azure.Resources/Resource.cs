@@ -15,10 +15,10 @@ namespace Amido.Azure.Resources
         /// Initializes a new instance of the <see cref="Resource"/> class.
         /// </summary>
         /// <param name="cultureName">Name of the culture.</param>
-        /// <param name="resourceSetName">Name of the resource set.</param>
         /// <param name="resourceKey">The resource key.</param>
+        /// <param name="resourceSetName">Name of the resource set.</param>
         /// <param name="data">The data.</param>
-        public Resource(string cultureName, string resourceSetName, string resourceKey, string data)
+        public Resource(string cultureName, string resourceKey, string resourceSetName, string data)
             : base(SecUtility.CombineToKey(cultureName, resourceSetName), resourceKey)
         {
             CultureName = cultureName;
