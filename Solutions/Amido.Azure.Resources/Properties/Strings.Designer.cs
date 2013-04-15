@@ -61,6 +61,24 @@ namespace Amido.Azure.Resources.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to culture argument cannot be null.
+        /// </summary>
+        internal static string CultureCannotBeNull {
+            get {
+                return ResourceManager.GetString("CultureCannotBeNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Key already added:.
+        /// </summary>
+        internal static string KeyAlreadyAdded {
+            get {
+                return ResourceManager.GetString("KeyAlreadyAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The resource with key &apos;{0}&apos; was not found in the resource store {1}({2})..
         /// </summary>
         internal static string ResourceNotFoundException {

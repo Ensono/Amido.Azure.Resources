@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Services.Client;
 using System.Diagnostics;
 using System.Globalization;
-using System.Runtime.CompilerServices;
+using Amido.Azure.Resources.Properties;
 using Amido.Azure.Storage.TableStorage;
 using Amido.Azure.Storage.TableStorage.Account;
 
@@ -66,7 +66,7 @@ namespace Amido.Azure.Resources
                     }
                     else 
                     {
-                        Trace.TraceError("Key already added: " + resourceRow.RowKey.ToLower());
+                        Trace.TraceError(Strings.KeyAlreadyAdded + resourceRow.RowKey.ToLower());
                     }
                 }
 
@@ -76,7 +76,7 @@ namespace Amido.Azure.Resources
                 }
                 else 
                 {
-                    Trace.TraceError("Key already added: " + partitionKey);
+                    Trace.TraceError(Strings.KeyAlreadyAdded + partitionKey);
                 }
 
                 return resourceDictionary;

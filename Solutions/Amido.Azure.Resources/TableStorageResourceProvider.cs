@@ -5,6 +5,7 @@ using System.Data.Services.Client;
 using System.Globalization;
 using System.Resources;
 using System.Web.Compilation;
+using Amido.Azure.Resources.Properties;
 using Microsoft.WindowsAzure;
 
 namespace Amido.Azure.Resources
@@ -110,7 +111,7 @@ namespace Amido.Azure.Resources
         {
             if(culture == null) 
             {
-                throw new ArgumentNullException("culture", "culture argument cannot be null");
+                throw new ArgumentNullException("culture", Strings.CultureCannotBeNull);
             }
 
             string resourceSetName;
