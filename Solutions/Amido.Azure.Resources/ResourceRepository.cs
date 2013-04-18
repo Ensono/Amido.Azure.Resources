@@ -56,7 +56,7 @@ namespace Amido.Azure.Resources
                     return resourceCache[partitionKey];
                 }
 
-                var resourceRows = ListByPartitionKey(partitionKey).All();
+                var resourceRows = GetAllByPartitionKey(partitionKey);
 
                 foreach(var resourceRow in resourceRows) 
                 {
