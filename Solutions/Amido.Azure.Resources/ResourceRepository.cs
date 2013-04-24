@@ -12,6 +12,12 @@ namespace Amido.Azure.Resources
     public class ResourceRepository : TableStorageRepository<Resource>, IResourceRepository
     {
         private readonly Dictionary<string, Dictionary<string, object>> resourceCache;
+
+        public ResourceRepository() 
+            : base(AccountConfiguration())
+        {
+            resourceCache = new Dictionary<string, Dictionary<string, object>>();
+        }
         
         public ResourceRepository(AccountConnection<Resource> connection)
             : base(connection)
